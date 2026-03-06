@@ -89,7 +89,7 @@ Como uma consequência direta da propriedade de simetria centrossimétrica (1), 
 
 **Corolário 1:** Sejam **P** e **Q** dois "pilares" (vetores-linha ou vetores-coluna) quaisquer de um hipercubo mágico centrossimétrico **H** de dimensão *d* e ordem *n*. Sejam **P'** e **Q'** os pilares simetricamente opostos a **P** e **Q**, respectivamente. O produto escalar euclidiano entre **P** e **Q** é igual ao produto escalar euclidiano entre **P'** e **Q'**:
 
-$$<P, Q> = <P', Q'> \quad (2)$$
+$$\langle P, Q \rangle = \langle P', Q' \rangle \quad (2)$$
 
 ### **5. Demonstração do Corolário**
 
@@ -100,33 +100,38 @@ Para facilitar a notação e mantendo a consistência com a indexação 0-a-n-1,
 
 Os pilares simétricos **P'** e **Q'** são definidos pelos índices opostos $p'$ e $q'$, onde $c'_i = n-1-c_i$ e $k'_i = n-1-k_i$. Começamos desenvolvendo o termo $<P', Q'>$:
 
-$$<P', Q'> = \sum_{j=0}^{n-1} \left( V(c'_0, ..., c'_{d-2}, j) \cdot V(k'_0, ..., k'_{d-2}, j) \right) \quad (3)$$
+$$\langle P', Q' \rangle = \sum_{j=0}^{n-1} \left( V(c'_0, ..., c'_{d-2}, j) \cdot V(k'_0, ..., k'_{d-2}, j) \right) \quad (3)$$
 
 Da propriedade de simetria (1), e definindo o índice simétrico $j' = n - 1 - j$, podemos expressar os elementos de P' e Q' em função de pilares opostos. Seja a constante $K = n^d + 1$:
-$V(c'_0, ..., c'_{d-2}, j) = K - V(c_0, ..., c_{d-2}, j') \quad (4)$
-$V(k'_0, ..., k'_{d-2}, j) = K - V(k_0, ..., k_{d-2}, j') \quad (5)$
+
+$$V(c'_0, ..., c'_{d-2}, j) = K - V(c_0, ..., c_{d-2}, j') \quad (4)$$
+
+$$V(k'_0, ..., k'_{d-2}, j) = K - V(k_0, ..., k_{d-2}, j') \quad (5)$$
 
 Substituindo (4) e (5) em (3):
 
-$$<P', Q'> = \sum_{j=0}^{n-1} \left[ (K - V(c_0, ..., j')) \cdot (K - V(k_0, ..., j')) \right] \quad (6)$$
+$$\langle P', Q' \rangle = \sum_{j=0}^{n-1} \left[ (K - V(c_0, ..., j')) \cdot (K - V(k_0, ..., j')) \right] \quad (6)$$
 
 Expandindo o produto:
 
-$$<P', Q'> = \sum_{j=0}^{n-1} [ K^2 - K \cdot (V(c_0, ..., j') + V(k_0, ..., j')) + (V(c_0, ..., j') \cdot V(k_0, ..., j')) ] \quad (7)$$
+$$\langle P', Q' \rangle = \sum_{j=0}^{n-1} [ K^2 - K \cdot (V(c_0, ..., j') + V(k_0, ..., j')) + (V(c_0, ..., j') \cdot V(k_0, ..., j')) ] \quad (7)$$
 
 Separando o somatório:
 
-$$<P', Q'> = \sum_{j=0}^{n-1} K^2 - K \sum_{j=0}^{n-1} (V(c_0, ..., j') + V(k_0, ..., j')) + \sum_{j=0}^{n-1} (V(c_0, ..., j') \cdot V(k_0, ..., j')) \quad (8)$$
+$$\langle P', Q' \rangle = \sum_{j=0}^{n-1} K^2 - K \sum_{j=0}^{n-1} (V(c_0, ..., j') + V(k_0, ..., j')) + \sum_{j=0}^{n-1} (V(c_0, ..., j') \cdot V(k_0, ..., j')) \quad (8)$$
 
 Analisando cada termo:
-* $\sum_{j=0}^{n-1} K^2 = n \cdot K^2$
-* A soma dos elementos de qualquer pilar é a constante mágica, $\sigma$. Como o índice $j'$ percorre todos os valores de $n-1$ a $0$ enquanto $j$ vai de $0$ a $n-1$, a soma sobre $j'$ é a mesma que sobre $j$. Logo: $\sum V(c_0, ..., j') = \sigma$ e $\sum V(k_0, ..., j') = \sigma$.
-* O último termo é, por definição, o produto escalar $<P, Q>$, pois a ordem inversa da soma não altera o resultado: $\sum (V(c_0, ..., j') \cdot V(k_0, ..., j')) = <P, Q>$
+
+* $$\sum_{j=0}^{n-1} K^2 = n \cdot K^2$$
+  
+* A soma dos elementos de qualquer pilar é a constante mágica $\sigma$. Como o índice $j'$ percorre todos os valores de $n-1$ a $0$ enquanto $j$ vai de $0$ a $n-1$, a soma sobre $j'$ é a mesma que sobre $j$. Logo: $\sum V(c_0, ..., j') = \sigma$ e $\sum V(k_0, ..., j') = \sigma$.
+  
+* O último termo é, por definição, o produto escalar $\langle P, Q \rangle$, pois a ordem inversa da soma não altera o resultado: $\sum (V(c_0, ..., j') \cdot V(k_0, ..., j')) = \langle P, Q \rangle$
 
 Substituindo os resultados em (8):
 
-$$<P', Q'> = n \cdot K^2 - K (\sigma + \sigma) + <P, Q> \quad (9)$$
-$$<P', Q'> = n \cdot K^2 - 2K \cdot \sigma + <P, Q> \quad (10)$$
+$$\langle P', Q' \rangle = n \cdot K^2 - K (\sigma + \sigma) + <P, Q> \quad (9)$$
+$$\langle P', Q' \rangle = n \cdot K^2 - 2K \cdot \sigma + \langle P, Q \rangle \quad (10)$$
 
 A constante mágica para um hipercubo normal de ordem *n* e dimensão *d* é:
 
@@ -138,9 +143,9 @@ $$\sigma = \frac{n \cdot K}{2} \quad (12)$$
 
 Finalmente, substituindo (12) em (10):
 
-$$<P', Q'> = n \cdot K^2 - 2K \cdot \left(\frac{n \cdot K}{2}\right) + <P, Q> \quad (13)$$
-$$<P', Q'> = n \cdot K^2 - n \cdot K^2 + <P, Q> \quad (14)$$
-$$<P', Q'> = <P, Q> \quad (15)$$
+$$\langle P', Q' \rangle = n \cdot K^2 - 2K \cdot \left(\frac{n \cdot K}{2}\right) + \langle P, Q \rangle \quad (13)$$
+$$\langle P', Q' \rangle = n \cdot K^2 - n \cdot K^2 + \langle P, Q \rangle \quad (14)$$
+$$\langle P', Q' \rangle = \langle P, Q \rangle \quad (15)$$
 
 O que conclui a demonstração.
 
